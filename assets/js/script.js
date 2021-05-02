@@ -35,6 +35,45 @@ var numeric = [1,2,3,4,5,6,7,8,9,0];
 // special characters -- do I include space OR / OR ' as a special char?
 var specialChars = ['!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',':','<','=','>','?','@','[',']','^','_','`','{','}','|','~']
 
+//FUNCITONS
+function password() {
+  // ask user how long they'd like their password to be
+  var passwordLength = window.prompt(
+    "How long would you like your password to be? Choose a number between 8 and 128 characters."
+  );
+  //if enter a valid number
+  if (passwordLength >= 8 && passwordLength <=128) {
+    console.log("Password length is " + passwordLength + " letters long.");
+
+    //proceed to next question
+    var lowerCase = window.confirm(
+      "Would you like to include lowercase letters in your password? Click 'OK' for yes, 'CANCEL' for no."
+    );
+    //if lowerCase === true, include in password
+    if (lowerCase) {
+      console.log("Lower case values WILL be included in password.");
+    }
+    else {
+      console.log("Lower case values will NOT be included in password.");
+    }
+
+  } else {
+    window.alert("You need to choose a number greater than 8 and less than 128.");
+    password();  
+    return false;
+  }
+}
+  
+password();
+
+
+/*
+function password() {
+  //if user inputs a length between 8 and 128 chars
+}
+if (passwordLength >= 8 || =< 128);
+*/
+
 
 // VALIDATE -- using if statements-- within a function?
   // IF user inputs password length {length is true, so include in password};
