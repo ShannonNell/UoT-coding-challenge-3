@@ -1,14 +1,5 @@
-/*don't know if I need this anymore
-// declarations
-var length = "";
-var confirmLower;
-var confirmUpper;
-var confirmNumeric;
-var confirmSpecial;
-*/
-
 // Password length function
-function passLength() {
+var passLength = function() {
   // prompt to find out length of password
   passLengthInput = window.prompt( "How long would you like your password to be? Choose a number between 8 and 128 characters.");
   //if valid number
@@ -23,14 +14,14 @@ function passLength() {
 }
 
 // passChar function to determine what characters the user wants to include
-function passChars() {
+var passChars = function() {
   var charChoice = "";
 
   //Arrays
-  var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-  var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-  var numeric = [1,2,3,4,5,6,7,8,9,0];
-  var specialChars = ['!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',':','<','=','>','?','@','[',']','^','_','`','{','}','|','~'];
+  var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",];
+  var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",];
+  var numeric = [1,2,3,4,5,6,7,8,9,0,];
+  var specialChars = ['!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',':','<','=','>','?','@','[',']','^','_','`','{','}','|','~',];
 
   //lower case
   var confirmLower = window.confirm("Would you like to include lowercase letters in your password? Click 'OK' for yes, 'CANCEL' for no.");
@@ -63,17 +54,12 @@ function passChars() {
     passChars();
   }
   // this will return the entire list of all the characters the user has decided to include in their password
+  console.log(charChoice);
   return charChoice;
-}
+};
 
-
-// I have function to determine length
-// function to determine what characters to use
-// now need function to create password when all the prompts have been completed
-  // - make the characters chosen be random and loop through the randomness
-  // - also need to make sure passChar will follow passLength
 // function to generate the actual password
-function generatePassword() {
+var generatePassword = function() {
   // to generate the password, my password length will equal the passwordLength() as determined from above
   var length = passLength();
   // characters chosen as determined from above
@@ -92,9 +78,8 @@ function generatePassword() {
   }
   console.log(password);
   return password
-}
+};
 
-    
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -104,7 +89,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
