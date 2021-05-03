@@ -16,18 +16,22 @@ var confirmUpper;
 var confirmNumeric;
 var confirmSpecial;
 
-// Generate password function
-  function generatePassword() {
-
+// Password length function
+  function passLength() {
     // prompt to find out length of password
-    var passLengthInput = window.prompt( "How long would you like your password to be? Choose a number between 8 and 128 characters.");
-    //if do NOT enter a valid number; this way don't need an else statement; LOOP
-    if (passLengthInput <8 || passLengthInput >128) {
+    passLengthInput = window.prompt( "How long would you like your password to be? Choose a number between 8 and 128 characters.");
+    //if valid number
+    if (passLengthInput >=8 && passLengthInput <=128) {
+      console.log(passLengthInput);
+    } 
+    else {
       window.alert("You need to choose a number greater than 8 and less than 128.");
-      generatePassword();
+      passLength();
     }
-    var passLength = passLengthInput; //do I want a parseINt here?
-    console.log(passLength);
+    return passLengthInput;
+  }
+  passLength();
+
     
     // determine what characters the user wants to include
     var confirmLower = window.confirm("Would you like to include lowercase letters in your password? Click 'OK' for yes, 'CANCEL' for no.");
@@ -51,6 +55,11 @@ var confirmSpecial;
     }
     if (confirmSpecial) {
       passChars += specialChars;
+    }
+
+    // if user selects none of the options
+    if (passChars == "") {
+      window.alert("You need to select at least one character type.")
     }
   }
 
