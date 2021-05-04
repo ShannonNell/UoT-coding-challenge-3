@@ -19,6 +19,10 @@ To generate a secure password based on various criteria/limitations set by user.
 ## Links
 ### Deployed Password Generator:
 * [PasswordGenerator](link)
+### Links that helped:
+* [Randomizing](https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript)
+* [GrepperRandomizing](https://www.codegrepper.com/code-examples/javascript/select+random+character+from+string+javascript)
+* [MDN-Addition-Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition_assignment)
 
 ## Tools
 * HTML 

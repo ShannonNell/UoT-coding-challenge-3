@@ -55,7 +55,6 @@ var passChars = function() {
   }
   // this will return the entire list of all the characters the user has decided to include in their password
   console.log(charChoice);
-
   return charChoice;
 };
 
@@ -69,28 +68,18 @@ var generatePassword = function() {
   // password where values will be inserted
   var password = [];
   
+  //for loop to loop through characters chosen until we reach the length the user has chosen for their password
   for (var i = 0; i < length; i++) {
+    //.push pushes each new letter to the end of the string; 
+    //charAt finds the character at a random point in the characters array; 
+    //* charLength makes sure to include all options from beginning to end of characters
     password.push(characters.charAt(Math.floor(Math.random() * charLength)));
   }
+  // return the password!
   console.log(password);
+  //.join returns my password as a string
   return password.join('');
 };
-
-
-/*THIS RANDOMIZER WORKS
-function randomChars(length) {
-  var randomPass = [];
-  var charList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&()*+,-./:;<=>?@[]^_`{}|~";
-  var charLength = charList.length;
-
-  for (var i = 0; i < length; i++) {
-    randomPass.push(charList.charAt(Math.floor(Math.random() * charLength)));
-  }
-  console.log(randomPass);
-  return randomPass.join('');
-}
-console.log(randomChars(10));
-*/
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
