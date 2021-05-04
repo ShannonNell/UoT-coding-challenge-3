@@ -18,10 +18,10 @@ var passChars = function() {
   var charChoice = "";
 
   //Arrays
-  var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",];
-  var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",];
-  var numeric = [1,2,3,4,5,6,7,8,9,0,];
-  var specialChars = ['!','"','#','$','%','&','(',')','*','+',',','-','.','/',':',':','<','=','>','?','@','[',']','^','_','`','{','}','|','~',];
+  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numeric = "1234567890";
+  var specialChars = "!#$%&()*+,-./:;<=>?@[]^_`{}|~";
 
   //lower case
   var confirmLower = window.confirm("Would you like to include lowercase letters in your password? Click 'OK' for yes, 'CANCEL' for no.");
@@ -55,6 +55,7 @@ var passChars = function() {
   }
   // this will return the entire list of all the characters the user has decided to include in their password
   console.log(charChoice);
+
   return charChoice;
 };
 
@@ -64,21 +65,32 @@ var generatePassword = function() {
   var length = passLength();
   // characters chosen as determined from above
   var characters = passChars();
+  var charLength = characters.length;
   // password where values will be inserted
-  var password = "";
+  var password = [];
   
-  // log to check those two values are what was selected 
-  console.log(length);
-  console.log(characters);
-
-  // for loop to choose password
   for (var i = 0; i < length; i++) {
-    // password (+characters) is equal to the result of randomizing the character selection until we reach the length of password
-    password += characters.charAt(Math.floor(Math.random() * i));
+    password.push(characters.charAt(Math.floor(Math.random() * charLength)));
   }
   console.log(password);
-  return password
+  return password.join('');
 };
+
+
+/*THIS RANDOMIZER WORKS
+function randomChars(length) {
+  var randomPass = [];
+  var charList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&()*+,-./:;<=>?@[]^_`{}|~";
+  var charLength = charList.length;
+
+  for (var i = 0; i < length; i++) {
+    randomPass.push(charList.charAt(Math.floor(Math.random() * charLength)));
+  }
+  console.log(randomPass);
+  return randomPass.join('');
+}
+console.log(randomChars(10));
+*/
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -93,3 +105,8 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
+//TODO
+// when hit generate password do I want to go through the whole thing over again or use the same inputs to generate a new password version
