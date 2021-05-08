@@ -28,12 +28,14 @@ var passChars = function() {
   // if confirmLower is true, then the passChars variable will include/add or equal the lowerCase variables
   if(confirmLower) {
     charChoice += lowerCase;
+    console.log(charChoice);
   };
 
   //UPPER case
   var confirmUpper = window.confirm("Would you like to include UPPERCASE letters in your password? Click 'OK' for yes, 'CANCEL' for no.");
   if (confirmUpper) {
     charChoice += upperCase; 
+    console.log(charChoice);
   };
 
   // Numeric
@@ -60,24 +62,17 @@ var passChars = function() {
 
 // function to generate the actual password
 var generatePassword = function() {
-  // to generate the password, my password length will equal the passwordLength() as determined from above
   var length = passLength();
-  // characters chosen as determined from above
   var characters = passChars();
   var charLength = characters.length;
-  // password where values will be inserted
   var password = [];
   
-  //for loop to loop through characters chosen until we reach the length the user has chosen for their password
+  //loop through characters chosen until we reach the length the user has chosen for their password
   for (var i = 0; i < length; i++) {
-    //.push pushes each new letter to the end of the string; 
-    //charAt finds the character at a random point in the characters array; 
-    //* charLength makes sure to include all options from beginning to end of characters
     password.push(characters.charAt(Math.floor(Math.random() * charLength)));
   }
   // return the password!
   console.log(password);
-  //.join returns my password as a string
   return password.join('');
 };
 
@@ -94,8 +89,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-//TODO
-// when hit generate password do I want to go through the whole thing over again or use the same inputs to generate a new password version

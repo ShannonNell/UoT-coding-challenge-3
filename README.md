@@ -18,20 +18,18 @@ To generate a secure password based on various criteria/limitations set by user.
 
 ## Links
 ### Deployed Password Generator:
-* [PasswordGenerator](link)
+* [Password Generator](link)
 ### Links that helped:
 * [Randomizing](https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript)
-* [GrepperRandomizing](https://www.codegrepper.com/code-examples/javascript/select+random+character+from+string+javascript)
-* [MDN-Addition-Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition_assignment)
+* [Grepper Randomizing](https://www.codegrepper.com/code-examples/javascript/select+random+character+from+string+javascript)
+* [MDN Addition Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition_assignment)
 
 ## Tools
-* HTML 
-* CSS
 * JavaScript
 
 ## Credits
 * Initial clone of base HTML, CSS, and JS from [Friendly-Parakeet](https://github.com/coding-boot-camp/friendly-parakeet)
-* Completed JavaScript: [Nell-GitHub](https://github.com/ShannonNell)
+* Completed JavaScript: [Nell GitHub](https://github.com/ShannonNell)
 
 ## Challenge Guidelines
 ### Task:
