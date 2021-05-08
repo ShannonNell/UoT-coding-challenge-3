@@ -14,11 +14,13 @@ Done as a challenge for UoT's Coding Bootcamp.
 
 ## Usage
 To generate a secure password based on various criteria/limitations set by user.
-![screenshotHere](link to screenshot)
+![Password Generator screenshot](assets/images/passwordGenScreenshot.png)
 
 ## Links
 ### Deployed Password Generator:
 * [Password Generator](https://shannonnell.github.io/UoT-coding-challenge-3/)
+
+
 ### Links that helped:
 * [Randomizing](https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript)
 * [Grepper Randomizing](https://www.codegrepper.com/code-examples/javascript/select+random+character+from+string+javascript)
