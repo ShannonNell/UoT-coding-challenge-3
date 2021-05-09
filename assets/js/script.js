@@ -23,48 +23,51 @@ var passChars = function() {
   var numeric = "1234567890";
   var specialChars = "!#$%&()*+,-./:;<=>?@[]^_`{}|~";
 
-  //lower case
+  //Password parameters
   var confirmLower = window.confirm("Would you like to include lowercase letters in your password? Click 'OK' for yes, 'CANCEL' for no.");
-  // if confirmLower is true, then the passChars variable will include/add or equal the lowerCase variables
+  var confirmUpper = window.confirm("Would you like to include UPPERCASE letters in your password? Click 'OK' for yes, 'CANCEL' for no.");
+  var confirmNumeric = window.confirm("Would you like to include NUMERIC values in your password? Click 'OK' for yes, 'CANCEL' for no.");
+  var confirmSpecial = window.confirm("Would you like to include special characters (ex. *!%$) in your password? Click 'OK' for yes, 'CANCEL' for no.");
+
+  // loop if user selects none of the options
+  while(confirmLower === false && confirmUpper === false && confirmNumeric === false && confirmSpecial === false) {
+    window.alert("You need to select at least one character type.");
+    var confirmLower = window.confirm("Would you like to include lowercase letters in your password? Click 'OK' for yes, 'CANCEL' for no.");
+    var confirmUpper = window.confirm("Would you like to include UPPERCASE letters in your password? Click 'OK' for yes, 'CANCEL' for no.");
+    var confirmNumeric = window.confirm("Would you like to include NUMERIC values in your password? Click 'OK' for yes, 'CANCEL' for no.");
+    var confirmSpecial = window.confirm("Would you like to include special characters (ex. *!%$) in your password? Click 'OK' for yes, 'CANCEL' for no.");
+  }
+
+  //if user selects characters
   if(confirmLower) {
     charChoice += lowerCase;
-    console.log(charChoice);
-  };
+  }
 
-  //UPPER case
-  var confirmUpper = window.confirm("Would you like to include UPPERCASE letters in your password? Click 'OK' for yes, 'CANCEL' for no.");
   if (confirmUpper) {
     charChoice += upperCase; 
-    console.log(charChoice);
-  };
+  }
 
-  // Numeric
-  var confirmNumeric = window.confirm("Would you like to include NUMERIC values in your password? Click 'OK' for yes, 'CANCEL' for no.");
   if (confirmNumeric) {
     charChoice += numeric;
-  };
+  }
 
-  // Special Characters
-  var confirmSpecial = window.confirm("Would you like to include special characters (ex. *!%$) in your password? Click 'OK' for yes, 'CANCEL' for no.");
   if (confirmSpecial) {
     charChoice += specialChars;
-  };
-
-  // if user selects none of the options
-  if (charChoice === "") {
-    window.alert("You need to select at least one character type.");
-    passChars();
   }
-  // this will return the entire list of all the characters the user has decided to include in their password
+
+  // list of all the characters the user has decided to include in their password
   console.log(charChoice);
   return charChoice;
 };
 
 // function to generate the actual password
 var generatePassword = function() {
+  // to generate the password, my password length will equal the passwordLength() as determined from above
   var length = passLength();
+  // characters chosen as determined from above
   var characters = passChars();
   var charLength = characters.length;
+  // password where values will be inserted
   var password = [];
   
   //loop through characters chosen until we reach the length the user has chosen for their password
@@ -73,6 +76,7 @@ var generatePassword = function() {
   }
   // return the password!
   console.log(password);
+  //.join returns my password as a string
   return password.join('');
 };
 
